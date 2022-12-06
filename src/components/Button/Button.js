@@ -1,4 +1,6 @@
 import { Btn, Wrapper } from './Button.styled';
+import PropTypes from 'prop-types';
+
 export const FeedbackOptions = ({ options, onClick }) => {
   return (
     <Wrapper>
@@ -14,4 +16,10 @@ export const FeedbackOptions = ({ options, onClick }) => {
       ))}
     </Wrapper>
   );
+};
+
+FeedbackOptions.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.oneOf(['good', 'neutral', 'bad']))
+    .isRequired,
+  onClick: PropTypes.func.isRequired,
 };
