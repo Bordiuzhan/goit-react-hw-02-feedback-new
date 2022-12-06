@@ -1,12 +1,17 @@
+import { Btn, Wrapper } from './Button.styled';
 export const FeedbackOptions = ({ options, onClick }) => {
-  return options.map(option => (
-    <button
-      key={option}
-      onClick={() => {
-        onClick(option);
-      }}
-    >
-      {option}
-    </button>
-  ));
+  return (
+    <Wrapper>
+      {options.map(option => (
+        <Btn
+          key={option}
+          onClick={() => {
+            onClick(option);
+          }}
+        >
+          {option}
+        </Btn>
+      ))}
+    </Wrapper>
+  );
 };

@@ -1,8 +1,9 @@
 import { Component } from 'react';
-import { Section } from './Section/Section';
-import { FeedbackOptions } from './Button/Button';
-import { Statistics } from './Statistic/Statistic';
-import { Notificacion } from './Notification/Notification';
+import { Section } from './Section';
+import { FeedbackOptions } from './Button';
+import { Statistics } from './Statistic';
+import { Notification } from './Notification';
+import { Layout } from './Layout';
 
 export class App extends Component {
   state = {
@@ -25,7 +26,7 @@ export class App extends Component {
   render() {
     const state = this.state;
     return (
-      <>
+      <Layout>
         <Section title={'Please leave feedback'}>
           <FeedbackOptions
             onClick={this.onLeaveFeedback}
@@ -40,10 +41,10 @@ export class App extends Component {
               positivePercentage={this.positivePercentage(state)}
             ></Statistics>
           ) : (
-            <Notificacion message={'There is no feedback'}></Notificacion>
+            <Notification message={'There is no feedback'}></Notification>
           )}
         </Section>
-      </>
+      </Layout>
     );
   }
 }

@@ -1,3 +1,5 @@
+import { Text } from './Statistic.styled';
+
 export const Statistics = ({
   state: { good, neutral, bad },
   total,
@@ -5,11 +7,11 @@ export const Statistics = ({
 }) => {
   return (
     <>
-      <p>Good: {good}</p>
-      <p>Neutral: {neutral}</p>
-      <p>Bad: {bad}</p>
-      <p>Total: {total}</p>
-      <p>Positive feedback: {positivePercentage}%</p>
+      <Text>Good: {good}</Text>
+      <Text>Neutral: {neutral}</Text>
+      <Text>Bad: {bad}</Text>
+      <Text>Total: {total}</Text>
+      <Text>Positive feedback: {positivePercentage}%</Text>
     </>
   );
 };
