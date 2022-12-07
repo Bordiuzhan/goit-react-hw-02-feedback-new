@@ -18,9 +18,9 @@ export class App extends Component {
 
   totalState = () => Object.values(this.state).reduce((a, b) => a + b, 0);
 
-  positivePercentage = data => {
-    const sum = this.totalState(Object.values(data));
-    return sum ? Math.round((100 / sum) * data.good) : 0;
+  positivePercentage = () => {
+    const sum = this.totalState();
+    return sum ? Math.round((100 / sum) * this.state.good) : 0;
   };
 
   render() {
@@ -38,7 +38,7 @@ export class App extends Component {
             <Statistics
               state={state}
               total={this.totalState()}
-              positivePercentage={this.positivePercentage(state)}
+              positivePercentage={this.positivePercentage()}
             ></Statistics>
           ) : (
             <Notification message={'There is no feedback'}></Notification>
